@@ -29,6 +29,7 @@ dependencies {
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
 	implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
 	implementation("org.springframework.cloud:spring-cloud-starter-kubernetes-all")
+	implementation("io.springfox:springfox-swagger2:2.9.2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test") {
 		exclude(group = "org.junit.vintage", module = "junit-vintage-engine")
 	}

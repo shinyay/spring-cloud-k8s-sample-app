@@ -5,6 +5,13 @@ Overview
 ## Description
 
 ## Demo
+### Spring Dependency
+#### Spring Cloud Kubernetes
+```
+dependencies {
+    implementation("org.springframework.cloud:spring-cloud-starter-kubernetes-all")
+}
+```
 
 ## Features
 

@@ -1,0 +1,3 @@
+[submodule "k8s-in-docker-gs"]
+	path = k8s-in-docker-gs
+	url = https://github.com/shinyay/k8s-in-docker-gs.git

@@ -11,4 +11,4 @@ pluginManagement {
 		}
 	}
 }
-rootProject.name = "spring-cloud-kubernetes"
+rootProject.name = "spring-organization-svc"

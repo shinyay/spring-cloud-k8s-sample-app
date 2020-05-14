@@ -14,6 +14,12 @@ class EmployeeController(val repository: EmployeeRepository) {
         return repository.save(employee)
     }
 
+    @GetMapping("/")
+    fun findAll(): MutableIterable<Employee> {
+        logger.info("Employee find")
+        return repository.findAll()
+    }
+
     @GetMapping("/{id}")
     fun findById(@PathVariable("id") id: String): Employee {
         logger.info("Employee find: id=$id")

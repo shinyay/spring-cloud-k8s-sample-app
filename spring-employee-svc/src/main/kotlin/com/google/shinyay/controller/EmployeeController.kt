@@ -37,4 +37,10 @@ class EmployeeController(val repository: EmployeeRepository) {
         logger.info("Employee find: organizationId=$id")
         repository.findByOrganizationId(id)
     }
+
+    @DeleteMapping("/{id}")
+    fun deleteById(@PathVariable("id")id: String) {
+        logger.info("Employee delete: id=$id")
+        return repository.deleteById(id)
+    }
 }

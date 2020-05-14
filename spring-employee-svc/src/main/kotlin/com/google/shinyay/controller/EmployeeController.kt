@@ -31,4 +31,10 @@ class EmployeeController(val repository: EmployeeRepository) {
         logger.info("Employee find: departmentId=$id")
         return repository.findByDepartmentId(id)
     }
+
+    @GetMapping("/organization/{organizationId}")
+    fun findByOrganization(@PathVariable("organizationId")id: Long) {
+        logger.info("Employee find: organizationId=$id")
+        repository.findByOrganizationId(id)
+    }
 }

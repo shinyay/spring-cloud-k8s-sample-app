@@ -54,24 +54,24 @@ tasks.withType<KotlinCompile> {
 	}
 }
 
-val project_id = if (hasProperty("project_id")) findProperty("project_id") as String else ""
+val project_id = if (hasProperty("docker_project_id")) findProperty("docker_project_id") as String else "library"
 
 tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootBuildImage>("bootBuildImage") {
 	builder = "cloudfoundry/cnb:bionic"
 	imageName = "docker.io/${project_id}/${project.name}:${project.version}"
 }
 
-val username= if (hasProperty("username")) findProperty("username") as String else ""
-val password = if (hasProperty("password")) findProperty("password") as String else ""
+val username= if (hasProperty("docker_username")) findProperty("docker_username") as String else ""
+val password = if (hasProperty("docker_password")) findProperty("docker_password") as String else ""
 
 jib {
 	from {
 		image = "shinyay/adoptopenjdk11-minimum"
 	}
 	to {
-		image = "registry.hub.docker.com/${project_id}/spring-boot-kubernetes-gs:${version}"
-//        auth.username = $username
-//        auth.password = $password
+		image = "registry.hub.docker.com/${project_id}/${project.name}:${project.version}"
+        auth.username = username
+        auth.password = password
 	}
 	container {
 		jvmFlags = mutableListOf("-Xms512m", "-Xdebug")

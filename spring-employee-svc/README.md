@@ -13,6 +13,12 @@ Employee Service with MongoDB using Spring Cloud Kubernetes
  - Database User
  - Database Password
 
+#### Base64 encoded
+##### base64 command
+```shell script
+$ echo -n 'password' | base64
+```
+
 ## Features
 
 - feature:1

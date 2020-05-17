@@ -19,6 +19,13 @@ Employee Service with MongoDB using Spring Cloud Kubernetes
 $ echo -n 'password' | base64
 ```
 
+### Apply YAML for Kubernetes
+```shell script
+$ kubectl apply -f kubernetes/mongodb-configmap.yaml
+$ kubectl apply -f kubernetes/mongodb-secret.yaml
+$ kubectl apply -f kubernetes/mongodb-deployment.yaml
+```
+
 ## Features
 
 - feature:1

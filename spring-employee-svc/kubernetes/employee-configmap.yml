@@ -3,4 +3,5 @@ kind: ConfigMap
 metadata:
   name: employee
 data:
-  spring.data.mongodb.database: "employee"
+  spring.data.mongodb.database: employee
+  spring.data.mongodb.host: mongodb.default

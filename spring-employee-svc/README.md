@@ -19,12 +19,19 @@ Employee Service with MongoDB using Spring Cloud Kubernetes
 $ echo -n 'password' | base64
 ```
 
-### Apply YAML for Kubernetes
+#### Apply YAML for Kubernetes
 ```shell script
 $ kubectl apply -f kubernetes/mongodb-configmap.yaml
 $ kubectl apply -f kubernetes/mongodb-secret.yaml
 $ kubectl apply -f kubernetes/mongodb-deployment.yaml
 ```
+
+### Employee Service
+#### bootstrap.yml
+Spring Cloud application operates by creating a “bootstrap” context, which is a parent context for the main application.
+It is responsible for loading configuration properties from the external sources and for decrypting properties in the local external configuration files.
+
+Instead of application.yml (or .properties), you can use bootstrap.yml
 
 ## Features
 

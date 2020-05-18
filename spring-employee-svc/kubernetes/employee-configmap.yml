@@ -3,5 +3,6 @@ kind: ConfigMap
 metadata:
   name: employee
 data:
-  spring.data.mongodb.database: employee
-  spring.data.mongodb.host: mongodb.default
+  spring.cloud.kubernetes.discovery.all-namespaces: "true"
+  spring.data.mongodb.database: "employee"
+  spring.data.mongodb.host: "mongodb.default"

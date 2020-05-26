@@ -16,6 +16,7 @@ Employee Service with MongoDB using Spring Cloud Kubernetes
 #### Base64 encoded
 ##### base64 command
 ```shell script
+$ echo -n 'admin' | base64
 $ echo -n 'password' | base64
 ```
 

@@ -3,6 +3,13 @@ kind: ConfigMap
 metadata:
   name: employee
 data:
-  spring.cloud.kubernetes.discovery.all-namespaces: "true"
-  spring.data.mongodb.database: "employee"
-  spring.data.mongodb.host: "mongodb.default"
+  application.yml: |-
+    spring:
+      cloud:
+        kubernetes:
+          discovery:
+            all-namespaces: true
+      data:
+        mongodb:
+          database: employee
+          host: mongodb.default

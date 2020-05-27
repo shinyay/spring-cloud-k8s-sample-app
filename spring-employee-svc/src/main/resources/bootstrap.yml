@@ -3,5 +3,11 @@ spring:
     name: employee
   cloud:
     kubernetes:
+      config:
+        name: employee
+        namespace: default
+        enable-api: true
       secrets:
-        enableApi: true
+        name: employee
+        namespace: default
+        enable-api: true

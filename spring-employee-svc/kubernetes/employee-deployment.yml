@@ -17,13 +17,15 @@ spec:
       containers:
         - name: employee
           image: shinyay/spring-employee-svc:0.0.1-SNAPSHOT
+          imagePullPolicy: Always
           ports:
             - containerPort: 8080
+      serviceAccountName: cluster-reader
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: employee
+  name: employee-svc
   labels:
     app: employee
 spec:
@@ -32,4 +34,18 @@ spec:
       protocol: TCP
   selector:
     app: employee
-  type: NodePort
+#  type: NodePort
+---
+# For KIND
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: employee-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: employee-svc
+              servicePort: 8080

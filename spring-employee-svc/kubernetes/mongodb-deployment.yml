@@ -14,21 +14,21 @@ spec:
       labels:
         app: mongodb
     spec:
-      volumes:
-        - name: data
-          emptyDir: {}
+#      volumes:
+#        - name: data
+#          emptyDir: {}
       containers:
       - name: mongodb
         image: mongo:latest
         ports:
         - containerPort: 27017
-        args:
-          - "mongod"
-          - "--auth"
-          - "--bind_ip_all"
-        volumeMounts:
-          - name: data
-            mountPath: /data/db
+#        args:
+#          - "mongod"
+#          - "--auth"
+#          - "--bind_ip_all"
+#        volumeMounts:
+#          - name: data
+#            mountPath: /data/db
         env:
         - name: MONGO_INITDB_DATABASE
           valueFrom:

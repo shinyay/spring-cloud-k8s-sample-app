@@ -5,7 +5,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: cluster-reader
-  namespace: default  
+  namespace: default
 roleRef:
   kind: ClusterRole
   name: cluster-reader-role

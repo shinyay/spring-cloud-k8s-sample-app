@@ -67,7 +67,8 @@ val password = if (hasProperty("docker_password")) findProperty("docker_password
 
 jib {
 	from {
-		image = "shinyay/adoptopenjdk11-minimum"
+//		image = "shinyay/adoptopenjdk11-minimum"
+		image = "openjdk:11-slim"
 	}
 	to {
 		image = "registry.hub.docker.com/${project_id}/${project.name}:${project.version}"

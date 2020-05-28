@@ -11,5 +11,6 @@ data:
             all-namespaces: true
       data:
         mongodb:
-          database: employee
           host: mongodb.default
+          port: 27017
+          database: admin

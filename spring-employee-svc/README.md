@@ -55,28 +55,36 @@ env:
       key: database-password
 ```
 
-#### 1.2. Apply YAML for Kubernetes
+#### 1.4. Apply YAML for Kubernetes
 ```shell script
 $ kubectl apply -f kubernetes/mongodb-configmap.yaml
 $ kubectl apply -f kubernetes/mongodb-secret.yaml
 $ kubectl apply -f kubernetes/mongodb-deployment.yaml
 ```
 
-#### 1.3. Confirm MongoDB in the Pod
+#### 1.5. Confirm MongoDB in the Pod
 ```shell script
 $ kubectl exec -it pod/mongodb-1234567890-abcdef /bin/bash
 ```
 
 ```shell script
-root@mongodb-79d8d9c878-kn285:/# mongo -u admin -p password
-MongoDB shell version v4.2.6
-connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
-Implicit session: session { "id" : UUID("7ed0d177-14cd-42d1-8ecf-809ba976ec32") }
-MongoDB server version: 4.2.6
+root@mongodb-1234567890-abcdef:/# mongo admin -u deveoper -p
+
+MongoDB shell version v4.2.7
+Enter password:
+connecting to: mongodb://127.0.0.1:27017/admin?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("7d8dddcc-2061-4e21-9b23-8f106e13703c") }
+MongoDB server version: 4.2.7
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+	http://docs.mongodb.org/
+Questions? Try the support group
+	http://groups.google.com/group/mongodb-user
 Server has startup warnings:
-2020-05-26T12:57:40.367+0000 I  STORAGE  [initandlisten]
-2020-05-26T12:57:40.367+0000 I  STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
-2020-05-26T12:57:40.367+0000 I  STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
+2020-05-28T22:47:28.187+0000 I  STORAGE  [initandlisten]
+2020-05-28T22:47:28.187+0000 I  STORAGE  [initandlisten] ** WARNING: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine
+2020-05-28T22:47:28.187+0000 I  STORAGE  [initandlisten] **          See http://dochub.mongodb.org/core/prodnotes-filesystem
 ---
 Enable MongoDB's free cloud-based monitoring service, which will then receive and display
 metrics about your deployment (disk utilization, CPU, operation statistics, etc).
@@ -89,7 +97,7 @@ To enable free monitoring, run the following command: db.enableFreeMonitoring()
 To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
 ---
 
->
+> 
 ```
 
 ### 2. Employee Service

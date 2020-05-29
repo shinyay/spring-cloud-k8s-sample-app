@@ -1,9 +1,0 @@
-spring:
-  cloud:
-    kubernetes:
-      discovery:
-        all-namespaces: true
-  data:
-    mongodb:
-      database: employee
-      host: mongodb.default

@@ -13,7 +13,7 @@ Employee Service with MongoDB using Spring Cloud Kubernetes
   - Database User
   - Database Password
 
-#### 1.1. Base64 encoded
+#### 1.1. Secret
 - **mongodb-secret.yml**
 
 ```yaml
@@ -27,6 +27,32 @@ data:
 ```shell script
 $ echo -n 'developer' | base64
 $ echo -n 'secret' | base64
+```
+
+#### 1.2. ConfigMap
+```yaml
+data:
+  database-name: admin
+```
+
+#### 1.3. Deployment
+```yaml
+env:
+- name: MONGO_INITDB_DATABASE
+  valueFrom:
+    configMapKeyRef:
+      name: mongodb
+      key: database-name
+- name: MONGO_INITDB_ROOT_USERNAME
+  valueFrom:
+    secretKeyRef:
+      name: mongodb
+      key: database-user
+- name: MONGO_INITDB_ROOT_PASSWORD
+  valueFrom:
+    secretKeyRef:
+      name: mongodb
+      key: database-password
 ```
 
 #### 1.2. Apply YAML for Kubernetes

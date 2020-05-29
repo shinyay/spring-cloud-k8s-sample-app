@@ -100,8 +100,19 @@ To permanently disable this reminder, run the following command: db.disableFreeM
 > 
 ```
 
-### 2. Employee Service
-#### 2.1 bootstrap.yml
+### 2. Role-Based Access Control
+#### 2.1. Role
+```yaml
+rules:
+  - apiGroups: ["", "extensions", "apps"]
+    resources: ["pods", "configmaps", "services", "endpoints", "secrets"]
+    verbs: ["get", "watch", "list"]
+```
+
+#### 2.2. 
+
+### 3. Employee Service
+#### 3.1 bootstrap.yml
 Spring Cloud application operates by creating a “bootstrap” context, which is a parent context for the main application.
 It is responsible for loading configuration properties from the external sources and for decrypting properties in the local external configuration files.
 
@@ -112,14 +123,14 @@ Typically it contains two properties:
 - name of the application (`spring.application.name`)
 - location of the configuration server (`spring.cloud.config.uri`)
 
-#### 2.2. Secret
+#### 3.2. Secret
 ```yaml
 data:
   spring.data.mongodb.username: ZGV2ZWxvcGVy
   spring.data.mongodb.password: c2VjcmV0
 ```
 
-#### 2.3. ConfigMap
+#### 3.3. ConfigMap
 ```yaml
 data:
   application.yml: |-
@@ -135,7 +146,7 @@ data:
           database: admin
 ```
 
-#### 2.4. Deployment
+#### 3.4. Deployment
 ```yaml
 
 ```

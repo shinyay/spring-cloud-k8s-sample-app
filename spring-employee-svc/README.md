@@ -109,7 +109,17 @@ rules:
     verbs: ["get", "watch", "list"]
 ```
 
-#### 2.2. 
+#### 2.2. RoleBinding
+```yaml
+subjects:
+- kind: ServiceAccount
+  name: cluster-reader
+  namespace: default
+roleRef:
+  kind: ClusterRole
+  name: cluster-reader-role
+  apiGroup: rbac.authorization.k8s.io
+```
 
 ### 3. Employee Service
 #### 3.1 bootstrap.yml

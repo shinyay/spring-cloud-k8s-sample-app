@@ -14,10 +14,19 @@ Employee Service with MongoDB using Spring Cloud Kubernetes
   - Database Password
 
 #### 1.1. Base64 encoded
-##### base64 command
+- **mongodb-secret.yml**
+
+```yaml
+data:
+  spring.data.mongodb.username: ZGV2ZWxvcGVy
+  spring.data.mongodb.password: c2VjcmV0
+```
+
+- **base64 command**
+
 ```shell script
-$ echo -n 'admin' | base64
-$ echo -n 'password' | base64
+$ echo -n 'developer' | base64
+$ echo -n 'secret' | base64
 ```
 
 #### 1.2. Apply YAML for Kubernetes
@@ -57,8 +66,8 @@ To permanently disable this reminder, run the following command: db.disableFreeM
 >
 ```
 
-### Employee Service
-#### bootstrap.yml
+### 2. Employee Service
+#### 2.1 bootstrap.yml
 Spring Cloud application operates by creating a “bootstrap” context, which is a parent context for the main application.
 It is responsible for loading configuration properties from the external sources and for decrypting properties in the local external configuration files.
 
@@ -68,6 +77,8 @@ Instead of application.yml (or .properties), you can use bootstrap.yml
 Typically it contains two properties:
 - name of the application (`spring.application.name`)
 - location of the configuration server (`spring.cloud.config.uri`)
+
+### 3. 
 
 ## Features
 

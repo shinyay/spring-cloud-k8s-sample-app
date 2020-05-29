@@ -158,8 +158,29 @@ data:
 
 #### 3.4. Deployment
 ```yaml
-
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: employee
+  template:
+    metadata:
+      labels:
+        app: employee
+    spec:
+      containers:
+        - name: employee
+          image: shinyay/spring-employee-svc:0.0.1-SNAPSHOT
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+      serviceAccountName: cluster-reader
 ```
+
+- `imagePullPolicy: Always`
+  - Always force to pull a image
+- `serviceAccountName: cluster-reader`
+  - Use RBAC for App to read ConfigMap and Secret
 
 ### 3. 
 

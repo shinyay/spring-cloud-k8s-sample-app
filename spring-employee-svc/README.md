@@ -8,7 +8,7 @@ Employee Service with MongoDB using Spring Cloud Kubernetes
 ### 1. MongoDB Deployment YAML for Kubernetes
 - [Deployment YAML](kubernetes/mongodb-deployment.yml)
 - [ConfigMap YAML](kubernetes/mongodb-configmap.yml)
-  - Database Name Configuration
+  - Database Name: **admin**
 - [Secret YAML](kubernetes/mongodb-secret.yml)
   - Database User
   - Database Password

@@ -112,6 +112,34 @@ Typically it contains two properties:
 - name of the application (`spring.application.name`)
 - location of the configuration server (`spring.cloud.config.uri`)
 
+#### 2.2. Secret
+```yaml
+data:
+  spring.data.mongodb.username: ZGV2ZWxvcGVy
+  spring.data.mongodb.password: c2VjcmV0
+```
+
+#### 2.3. ConfigMap
+```yaml
+data:
+  application.yml: |-
+    spring:
+      cloud:
+        kubernetes:
+          discovery:
+            all-namespaces: true
+      data:
+        mongodb:
+          host: mongodb.default
+          port: 27017
+          database: admin
+```
+
+#### 2.4. Deployment
+```yaml
+
+```
+
 ### 3. 
 
 ## Features

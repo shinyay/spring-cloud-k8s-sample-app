@@ -182,6 +182,13 @@ spec:
 - `serviceAccountName: cluster-reader`
   - Use RBAC for App to read ConfigMap and Secret
 
+#### 3.5. Apply YAML for Kubernetes
+```shell script
+$ kubectl apply -f kubernetes/employee-configmap.yaml
+$ kubectl apply -f kubernetes/employee-secret.yaml
+$ kubectl apply -f kubernetes/employee-deployment.yaml
+```
+
 ## Features
 
 - feature:1

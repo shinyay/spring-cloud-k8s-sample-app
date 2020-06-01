@@ -25,4 +25,10 @@ class DepartmentController(val repository: DepartmentRepository,
         logger.info("Department find: id=$id")
         return repository.findById(id).get()
     }
+
+    @GetMapping("/")
+    fun findAll(): MutableIterable<Department> {
+        logger.info("Department find")
+        return repository.findAll()
+    }
 }

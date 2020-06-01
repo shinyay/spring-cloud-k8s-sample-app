@@ -7,4 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Document
 data class Department(@Id val id: String,
                       val organizationId: Long,
                       val name: String,
-                      @Transient val employees: List<Employee>)
+                      @Transient var employees: List<Employee>) {
+    fun employees(employees: List<Employee>) {this.employees = employees}
+}

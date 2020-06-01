@@ -31,4 +31,17 @@ class DepartmentController(val repository: DepartmentRepository,
         logger.info("Department find")
         return repository.findAll()
     }
+
+    @GetMapping("/organization/{organizationId}")
+    fun findByOrganization(@PathVariable("organizationId") organizationId: Long): List<Department> {
+        logger.info("Department find: organizationId=$organizationId")
+        return repository.findByOrganizationId(organizationId)
+    }
+
+    @GetMapping("/organization/{organizationId}/with-employees")
+    fun findByOrganizationWithEmployees(@PathVariable("organizationId") organizationId: Long) {
+        logger.info("Department find: organizationId=$organizationId")
+        val departments: List<Department> = repository.findByOrganizationId(organizationId)
+        departments.forEach { dep -> dep.employees(employeeClient.findByDepartment(dep.id)) }
+    }
 }

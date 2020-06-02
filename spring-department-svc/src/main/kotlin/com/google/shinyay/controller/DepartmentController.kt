@@ -1,18 +1,12 @@
-package controller
+package com.google.shinyay.controller
 
-import com.google.shinyay.client.EmployeeClient
 import com.google.shinyay.logger
 import com.google.shinyay.model.Department
-import com.google.shinyay.model.Employee
 import com.google.shinyay.repository.DepartmentRepository
 import org.springframework.web.bind.annotation.*
 
 @RestController
-class DepartmentController(val repository: DepartmentRepository,
-                           val employeeClient: EmployeeClient) {
-
-    @GetMapping("/feign")
-    fun listRest(): List<Employee> = employeeClient.findByDepartment("1")
+class DepartmentController(val repository: DepartmentRepository) {
 
     @PostMapping("/")
     fun add(@RequestBody department: Department): Department {
@@ -36,12 +30,5 @@ class DepartmentController(val repository: DepartmentRepository,
     fun findByOrganization(@PathVariable("organizationId") organizationId: Long): List<Department> {
         logger.info("Department find: organizationId=$organizationId")
         return repository.findByOrganizationId(organizationId)
-    }
-
-    @GetMapping("/organization/{organizationId}/with-employees")
-    fun findByOrganizationWithEmployees(@PathVariable("organizationId") organizationId: Long) {
-        logger.info("Department find: organizationId=$organizationId")
-        val departments: List<Department> = repository.findByOrganizationId(organizationId)
-        departments.forEach { dep -> dep.employees(employeeClient.findByDepartment(dep.id)) }
     }
 }

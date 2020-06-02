@@ -57,9 +57,9 @@ env:
 
 #### 1.4. Apply YAML for Kubernetes
 ```shell script
-$ kubectl apply -f kubernetes/mongodb-configmap.yaml
-$ kubectl apply -f kubernetes/mongodb-secret.yaml
-$ kubectl apply -f kubernetes/mongodb-deployment.yaml
+$ kubectl apply -f kubernetes/mongodb-configmap.yml
+$ kubectl apply -f kubernetes/mongodb-secret.yml
+$ kubectl apply -f kubernetes/mongodb-deployment.yml
 ```
 
 #### 1.5. Confirm MongoDB in the Pod

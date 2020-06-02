@@ -121,6 +121,13 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
 ```
 
+#### 2.3. Apply YAML for Kubernetes
+```shell script
+$ kubectl apply -f kubernetes/rbac-service-account.yml
+$ kubectl apply -f kubernetes/rbac-role.yml
+$ kubectl apply -f kubernetes/rbac-role-binding.yml
+```
+
 ### 3. Employee Service
 #### 3.1 bootstrap.yml
 Spring Cloud application operates by creating a “bootstrap” context, which is a parent context for the main application.

@@ -191,9 +191,9 @@ spec:
 
 #### 3.5. Apply YAML for Kubernetes
 ```shell script
-$ kubectl apply -f kubernetes/employee-configmap.yaml
-$ kubectl apply -f kubernetes/employee-secret.yaml
-$ kubectl apply -f kubernetes/employee-deployment.yaml
+$ kubectl apply -f kubernetes/employee-configmap.yml
+$ kubectl apply -f kubernetes/employee-secret.yml
+$ kubectl apply -f kubernetes/employee-deployment.yml
 ```
 
 ## Features

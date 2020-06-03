@@ -21,3 +21,31 @@ spec:
           ports:
             - containerPort: 8080
       serviceAccountName: cluster-reader
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: department-svc
+  labels:
+    app: department
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+  selector:
+    app: department
+#  type: NodePort
+---
+# For KIND
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: department-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: department-svc
+              servicePort: 8080

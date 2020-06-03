@@ -1,3 +1,13 @@
 spring:
   application:
     name: department
+  cloud:
+    kubernetes:
+      config:
+        name: department
+        namespace: default
+        enable-api: true
+      secrets:
+        name: department
+        namespace: default
+        enable-api: true

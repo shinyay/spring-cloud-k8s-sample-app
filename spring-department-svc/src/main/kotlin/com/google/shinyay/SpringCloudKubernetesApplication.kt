@@ -12,6 +12,7 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableDiscoveryClient
 @EnableMongoRepositories
 @EnableFeignClients
+
 class SpringCloudKubernetesApplication
 
 fun main(args: Array<String>) {

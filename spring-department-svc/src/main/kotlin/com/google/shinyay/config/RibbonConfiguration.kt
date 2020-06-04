@@ -15,7 +15,7 @@ class RibbonConfiguration(val discoveryClient: DiscoveryClient) {
     var serviceId = "client"
 
     @Bean
-    fun ribbonPing(config: IClientConfig) = PingUrl()
+    fun ribbonPing(config: IClientConfig) = PingUrl(false, "/actuator/health")
 
     @Bean
     fun ribbonRule(config: IClientConfig) = WeightedResponseTimeRule()

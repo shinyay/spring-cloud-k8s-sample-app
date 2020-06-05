@@ -8,6 +8,19 @@ Department Service to call Employee Service
 
 ## Demo
 
+1. Deployment Service
+1.1. bootstrap.yml
+     
+Spring Cloud application operates by creating a “bootstrap” context, which is a parent context for the main application. It is responsible for loading configuration properties from the external sources and for decrypting properties in the local external configuration files.
+
+Instead of application.yml (or .properties), you can use bootstrap.yml bootstrap.yml is loaded before application.yml.
+
+Typically it contains two properties:
+
+- name of the application (`spring.application.name`)
+- location of the configuration server (`spring.cloud.config.uri`)
+
+
 ## Features
 
 - feature:1

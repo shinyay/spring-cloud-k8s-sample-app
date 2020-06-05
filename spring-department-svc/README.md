@@ -1,6 +1,8 @@
-# Name
+# Spring Cloud Kubernetes - Department Service
 
-Overview
+Department Service to call Employee Service
+- Department SVC -> Spring Data MongoDB ->  MongoDB
+- Department SVC -> Ribbon -> Employee SVC
 
 ## Description
 

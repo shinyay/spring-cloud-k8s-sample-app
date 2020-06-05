@@ -25,8 +25,17 @@ $ kubectl apply -f kubernetes/department-deployment.yml
 
 ## Features
 
-- feature:1
-- feature:2
+- Client-side Load Balancing
+
+### Feign and Ribbon
+- Feign
+  - Declarative REST Client
+  - https://cloud.spring.io/spring-cloud-openfeign/reference/html/
+- Ribbon
+  - Client Side Load Balancer
+  - https://cloud.spring.io/spring-cloud-netflix/multi/multi_spring-cloud-ribbon.html
+
+Feign <-> Ribbon <-> Services
 
 ## Requirement
 

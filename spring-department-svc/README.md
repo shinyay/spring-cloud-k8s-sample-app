@@ -15,6 +15,14 @@ Department Service to call Employee Service
 - [Secret YAML](kubernetes/department-secret.yml)
 - [Deployment YAML](kubernetes/department-deployment.yml)
 
+1.2. Apply YAML for Kubernetes
+
+```shell script
+$ kubectl apply -f kubernetes/department-configmap.yml
+$ kubectl apply -f kubernetes/department-secret.yml
+$ kubectl apply -f kubernetes/department-deployment.yml
+```
+
 ## Features
 
 - feature:1

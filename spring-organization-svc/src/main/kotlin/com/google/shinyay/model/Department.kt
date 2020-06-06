@@ -1,4 +1,5 @@
 package com.google.shinyay.model
 
-class Department {
-}
+data class Department(val id: Long,
+                      val name: String,
+                      val employees: List<Employee>)

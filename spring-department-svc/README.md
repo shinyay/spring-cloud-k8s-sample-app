@@ -26,6 +26,7 @@ $ kubectl apply -f kubernetes/department-deployment.yml
 ## Features
 
 - Client-side Load Balancing
+- DiscoveryClient for Kubernetes
 
 ### Feign and Ribbon
 - Feign
@@ -37,6 +38,31 @@ $ kubectl apply -f kubernetes/department-deployment.yml
 
 Feign <-> Ribbon <-> Services
 
+```kotlin
+@SpringBootApplication
+@EnableFeignClients
+@RibbonClients(defaultConfiguration = [RibbonConfiguration::class])
+class SpringCloudKubernetesApplication
+```
+
+```kotlin
+@FeignClient(name = "employee")
+interface EmployeeClient {
+
+    @GetMapping("/department/{departmentId}")
+    fun findByDepartment(@PathVariable("departmentId") departmentId: String): List<Employee>
+}
+```
+
+### DiscoveryClient
+DiscoveryClient for Kubernetes allows you to query Kubernetes endpoints by name.
+A service is typically exposed by the Kubernetes API server as a collection of endpoints which represent http, https addresses that a client can access from a Spring Boot application running as a pod.
+
+```kotlin
+@SpringBootApplication
+@EnableDiscoveryClient
+class SpringCloudKubernetesApplication
+```
 ## Requirement
 
 ## Usage

@@ -1,4 +1,16 @@
 package com.google.shinyay.controller
 
-class OrganizationRepository {
+import com.google.shinyay.logger
+import com.google.shinyay.model.Organization
+import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.RestController
+
+@RestController
+class OrganizationRepository(val repository: OrganizationRepository) {
+
+    @GetMapping("/")
+    fun findAll(): MutableIterable<Organization> {
+        logger.info("Organization find")
+        return repository.findAll()
+    }
 }

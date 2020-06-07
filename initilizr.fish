@@ -9,7 +9,7 @@ set -g PACKAGE $GROUP_ID
 set -g DEPENDENCY web,actuator,data-mongodb,cloud-starter-sleuth,cloud-feign,cloud-ribbon
 
 curl https://start.spring.io/starter.zip --create-dirs -o ./spring/spring.zip \
-        -d bootVersion=2.3.0.RC1 \
+        -d bootVersion=2.3.0.RELEASE \
 	-d type=gradle-project \
 	-d language=kotlin \
 	-d groupId=$GROUP_ID \

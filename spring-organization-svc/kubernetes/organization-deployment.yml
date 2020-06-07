@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: organization
+  labels:
+    app: organization
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: organization
+  template:
+    metadata:
+      labels:
+        app: organization
+    spec:
+      containers:
+        - name: organization
+          image: shinyay/spring-organization-svc:0.0.1-SNAPSHOT
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+      serviceAccountName: cluster-reader
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: organization-svc
+  labels:
+    app: organization
+spec:
+  ports:
+    - port: 8080
+      protocol: TCP
+  selector:
+    app: organization
+#  type: NodePort
+---
+# For KIND
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: organization-ingress
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /
+            backend:
+              serviceName: organization-svc
+              servicePort: 8080

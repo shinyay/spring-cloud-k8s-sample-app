@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: organization
+data:
+  application.yml: |-
+    spring:
+      cloud:
+        kubernetes:
+          discovery:
+            all-namespaces: true
+      data:
+        mongodb:
+          host: mongodb.default
+          port: 27017
+          database: admin

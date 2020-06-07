@@ -1,6 +1,10 @@
-# Name
+# Spring Cloud Kubernetes - Organization Service
 
-Overview
+Organization Service to call Employee Service and Department Service
+
+- Organization SVC -> Spring Data MongoDB -> MongoDB
+- Organization SVC -> Ribbon -> Employee SVC
+- Organization SVC -> Ribbon -> Department SVC
 
 ## Description
 

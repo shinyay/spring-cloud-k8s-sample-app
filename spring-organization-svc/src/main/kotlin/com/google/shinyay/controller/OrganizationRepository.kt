@@ -25,5 +25,4 @@ class OrganizationRepository(val repository: OrganizationRepository) {
         logger.info("Organization add: $organization")
         return repository.save(organization)
     }
-
 }

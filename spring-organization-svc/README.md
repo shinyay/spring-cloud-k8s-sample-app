@@ -10,6 +10,21 @@ Organization Service to call Employee Service and Department Service
 
 ## Demo
 
+1. Organization Service
+1.1. Organization YAML for Kubernetes
+
+- [ConfigMap YAML](kubernetes/organization-configmap.yml)
+- [Secret YAML](kubernetes/organization-secret.yml)
+- [Deployment YAML](kubernetes/organization-deployment.yml)
+
+1.2. Apply YAML for Kubernetes
+
+```shell script
+$ kubectl apply -f kubernetes/organization-configmap.yml
+$ kubectl apply -f kubernetes/organization-secret.yml
+$ kubectl apply -f kubernetes/organization-deployment.yml
+```
+
 ## Features
 
 - feature:1

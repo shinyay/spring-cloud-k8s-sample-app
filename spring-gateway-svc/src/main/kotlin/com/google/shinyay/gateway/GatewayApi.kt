@@ -1,4 +1,6 @@
 package com.google.shinyay.gateway
 
-class GatewayApi {
+import org.springframework.cloud.netflix.zuul.filters.ZuulProperties
+
+class GatewayApi(val properties: ZuulProperties) {
 }

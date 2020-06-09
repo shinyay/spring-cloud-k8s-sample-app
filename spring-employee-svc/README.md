@@ -244,6 +244,13 @@ $ kubectl wait --namespace ingress-nginx \
   --timeout=90s
 ```
 
+## Spring Actuator for Build info and Git info
+```shell script
+$ curl -s localhost/actuator/info | jq .
+```
+
+
+
 ## Installation
 
 ## Licence

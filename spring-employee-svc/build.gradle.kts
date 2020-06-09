@@ -56,7 +56,7 @@ tasks.withType<KotlinCompile> {
 
 val project_id = if (hasProperty("docker_project_id")) findProperty("docker_project_id") as String else "library"
 
-//　Packaging OCI Images
+// Packaging OCI Images
 tasks.getByName<org.springframework.boot.gradle.tasks.bundling.BootBuildImage>("bootBuildImage") {
 //	builder = "cloudfoundry/cnb:bionic"
 	builder = "gcr.io/buildpacks/builder"

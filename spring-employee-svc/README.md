@@ -249,7 +249,12 @@ $ kubectl wait --namespace ingress-nginx \
 $ curl -s localhost/actuator/info | jq .
 ```
 
-
+### Build Info
+```kotlin
+springBoot {
+	buildInfo()
+}
+```
 
 ## Installation
 

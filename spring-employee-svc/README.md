@@ -256,6 +256,11 @@ springBoot {
 }
 ```
 
+Generate Build info under `build/resources/main/META-INF`
+```shell script
+$ ./gradlew bootBuildInfo
+```
+
 ## Installation
 
 ## Licence

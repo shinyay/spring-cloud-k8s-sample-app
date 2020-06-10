@@ -1,6 +1,6 @@
 # Spring Cloud Kubernetes Sample Application
 
-Overview
+`Spring Cloud Kubernetes` provide Spring Cloud common interface implementations that consume Kubernetes native services. 
 
 ## Description
 

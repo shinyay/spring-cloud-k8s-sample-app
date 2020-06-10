@@ -261,6 +261,14 @@ Generate Build info under `build/resources/main/META-INF`
 $ ./gradlew bootBuildInfo
 ```
 
+### Git Info
+```kotlin
+plugins {
+	id("com.gorylenko.gradle-git-properties") version "2.0.0"
+}
+```
+
+
 ## Installation
 
 ## Licence

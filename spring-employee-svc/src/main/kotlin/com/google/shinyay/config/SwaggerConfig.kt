@@ -11,14 +11,16 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 @Configuration
 @EnableSwagger2
-class SwaggerConfig(val build: BuildProperties, val git: GitProperties) {
+class SwaggerConfig(build: BuildProperties, git: GitProperties) {
+
+    val version = "${build.version}-${git.shortCommitId}-${git.branch}"
 
     @Bean
     fun docApi(): Docket = Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(ApiInfoBuilder()
-                        .version("${build.version}-${git.shortCommitId}-${git.branch}")
+                        .version(version)
                         .title("Employee API")
-                        .description("Employee Service API - ${build.version}-${git.shortCommitId}-${git.branch}")
+                        .description(version)
                         .build()
                 )
 }

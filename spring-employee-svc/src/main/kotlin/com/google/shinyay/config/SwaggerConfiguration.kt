@@ -11,7 +11,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2
 
 @Configuration
 @EnableSwagger2
-class SwaggerConfig(build: BuildProperties, git: GitProperties) {
+class SwaggerConfiguration(build: BuildProperties, git: GitProperties) {
 
     val version = "${build.version}-${git.shortCommitId}-${git.branch}"
 

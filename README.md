@@ -2,6 +2,10 @@
 
 `Spring Cloud Kubernetes` provide Spring Cloud common interface implementations that consume Kubernetes native services. 
 
+- `Discovery Client` implementation that resolves service names to Kubernetes Services.
+- Load application properties from Kubernetes `ConfigMaps` and `Secrets`.
+- `Ribbon` client-side load balancer with server list obtained from Kubernetes Endpoints.
+
 ## Description
 
 ## Demo

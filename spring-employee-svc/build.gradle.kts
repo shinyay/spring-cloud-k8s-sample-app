@@ -4,6 +4,7 @@ plugins {
 	id("org.springframework.boot") version "2.3.0.RELEASE"
 	id("io.spring.dependency-management") version "1.0.9.RELEASE"
 	id("com.gorylenko.gradle-git-properties") version "2.0.0"
+	id("com.palantir.git-version") version "0.12.3"
 	id("com.google.cloud.tools.jib") version "2.1.0"
 	kotlin("jvm") version "1.3.72"
 	kotlin("plugin.spring") version "1.3.72"

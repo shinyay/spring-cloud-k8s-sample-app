@@ -32,6 +32,13 @@ dependencies {
 }
 ```
 
+|Starter|Feature|(Spring Cloud)|
+|-------|-------|------------|
+|spring-cloud-starter-kubernetes|Discovery Client|Eureka|
+|spring-cloud-starter-kubernetes-config|ConfigMap / Secret|Config Server|
+|spring-cloud-starter-kubernetes-ribbon|ClientSide Load balancer|Ribbon|
+|spring-cloud-starter-kubernetes-all|All of the above|All of the above|
+
 ## Features
 
 - feature:1

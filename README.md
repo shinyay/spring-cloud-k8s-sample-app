@@ -39,6 +39,25 @@ dependencies {
 |spring-cloud-starter-kubernetes-ribbon|ClientSide Load balancer|Ribbon|
 |spring-cloud-starter-kubernetes-all|All of the above|All of the above|
 
+### Service Discovery
+
+Service Discovery enables to query Kubernetes Endpoints(services) **by name**
+Ribbon uses the discovery feature to fetch pods list.
+
+```kotlin
+@SpringBootApplication
+@EnableDiscoveryClient
+public class EmployeeApplication
+```
+
+#### Discoveried Name
+- bootstrap.yml
+```
+spring:
+  application:
+    name: employee
+```
+
 ## Features
 
 - feature:1

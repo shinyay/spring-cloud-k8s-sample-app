@@ -8,6 +8,18 @@
 
 ## Description
 
+|Microservices Capability|Spring Cloud|Kubernetes|
+|------------------------|------------|----------|
+|Configuration Management|Config Server|ConfigMap / Secret|
+|Service Discovery|Eureka|Service / Ingress|
+|Load Balancing|Spring Loadbalancer / Ribbon|Service|
+|API Gateway|Zuul|Service / Ingress|
+|Service Security|Spring Cloud Security|---|
+|Centralized Logging|ELK (LogStash)|EFK (Fluentd)|
+|Centralized Metrics|Micrometer|Prometheus / Grafana|
+|Centralized Tracing|Spring Cloud Sleuth / Zipkin|Zipkin|
+|Resilience / Fault Tolerance|Hystrix|Health Check|
+
 ## Demo
 ### Spring Dependency
 #### Spring Cloud Kubernetes

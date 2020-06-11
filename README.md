@@ -20,6 +20,9 @@
 |Centralized Tracing|Spring Cloud Sleuth / Zipkin|Zipkin|
 |Resilience / Fault Tolerance|Hystrix|Health Check|
 
+### Application Archiecture
+![app-architecture](images/app-architecture.png)
+
 ## Demo
 ### Spring Dependency
 #### Spring Cloud Kubernetes
